@@ -1,0 +1,8 @@
+apiVersion: v1
+description: A Rancher 2.0 App store for test-env
+name: test-env
+version: 0.1.0
+description: Rancher && bszxyh
+icon: http://tuku-images.oss-cn-beijing.aliyuncs.com/18-8-7/62522081.jpg
+
+
