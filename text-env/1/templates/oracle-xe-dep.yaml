@@ -5,20 +5,22 @@ metadata:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: user-vxmgg
     field.cattle.io/publicEndpoints: '[{"addresses":["42.62.83.2"],"port":30261,"protocol":"TCP","serviceName":"default:oracle-v2-nodeport","allNodes":true},{"addresses":["42.62.83.2"],"port":31021,"protocol":"TCP","serviceName":"default:oracle-v2-nodeport","allNodes":true}]'
+  creationTimestamp: 2018-08-07T13:53:07Z
   generation: 2
   labels:
-    workload.user.cattle.io/workloadselector: deployment-default-oracle-xe
-  name: oracle-xe
+    workload.user.cattle.io/workloadselector: deployment-default-oracle-v2
+  name: oracle-v2
   namespace: default
   resourceVersion: "1359395"
-  selfLink: /apis/apps/v1beta2/namespaces/default/deployments/oracle-xe
+  selfLink: /apis/apps/v1beta2/namespaces/default/deployments/oracle-v2
+  uid: 36d19587-9a49-11e8-9e7f-0050568d0e35
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-default-oracle-xe
+      workload.user.cattle.io/workloadselector: deployment-default-oracle-v2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -27,16 +29,16 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":1521,"dnsName":"oracle-xe-nodeport","kind":"NodePort","name":"1521tcp01","protocol":"TCP","sourcePort":0},{"containerPort":8080,"dnsName":"oracle-xe-nodeport","kind":"NodePort","name":"8080tcp01","protocol":"TCP","sourcePort":0}]]'
+        field.cattle.io/ports: '[[{"containerPort":1521,"dnsName":"oracle-v2-nodeport","kind":"NodePort","name":"1521tcp01","protocol":"TCP","sourcePort":0},{"containerPort":8080,"dnsName":"oracle-v2-nodeport","kind":"NodePort","name":"8080tcp01","protocol":"TCP","sourcePort":0}]]'
       creationTimestamp: null
       labels:
-        workload.user.cattle.io/workloadselector: deployment-default-oracle-xe
+        workload.user.cattle.io/workloadselector: deployment-default-oracle-v2
     spec:
       affinity: {}
       containers:
       - image: sath89/oracle-xe-11g
         imagePullPolicy: Always
-        name: oracle-xe
+        name: oracle-v2
         ports:
         - containerPort: 1521
           name: 1521tcp01
