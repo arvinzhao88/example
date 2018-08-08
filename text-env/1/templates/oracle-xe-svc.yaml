@@ -1,39 +1,14 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    field.cattle.io/publicEndpoints: '[{"addresses":["42.62.83.2"],"port":30261,"protocol":"TCP","serviceName":"default:oracle-v2-nodeport","allNodes":true},{"addresses":["42.62.83.2"],"port":31021,"protocol":"TCP","serviceName":"default:oracle-v2-nodeport","allNodes":true}]'
-    field.cattle.io/targetWorkloadIds: '["deployment:default:oracle-v2"]'
-    workload.cattle.io/targetWorkloadIdNoop: "true"
-    workload.cattle.io/workloadPortBased: "true"
-  creationTimestamp: 2018-08-07T13:53:07Z
-  name: oracle-v2-nodeport
-  ownerReferences:
-  - apiVersion: apps/v1beta2
-    controller: true
-    kind: deployment
-    name: oracle-v2
-    uid: 36d19587-9a49-11e8-9e7f-0050568d0e35
-  resourceVersion: "1358887"
-  uid: 36d5a6ef-9a49-11e8-9e7f-0050568d0e35
+  name: oracle-xe
+  labels:
+    name: oracle-xe
 spec:
-  clusterIP: 10.43.137.69
-  externalTrafficPolicy: Cluster
   ports:
-  - name: 1521tcp01
-    nodePort: 30261
-    port: 1521
-    protocol: TCP
+    # the port that this service should serve on
+  - port: 1521
     targetPort: 1521
-  - name: 8080tcp01
-    nodePort: 31021
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
   selector:
-    workload.user.cattle.io/workloadselector: deployment-default-oracle-v2
-  sessionAffinity: None
-  type: NodePort
-status:
-  loadBalancer: {}
-
+    name: oracle-xe
