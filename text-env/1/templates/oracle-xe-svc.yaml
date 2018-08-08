@@ -6,9 +6,10 @@ metadata:
   labels:
     name: oracle-xe
 spec:
+  type: NodePort
   ports:
     # the port that this service should serve on
-  - port: 1521
+  - port: 31521
     targetPort: 1521
   selector:
     name: oracle-xe
