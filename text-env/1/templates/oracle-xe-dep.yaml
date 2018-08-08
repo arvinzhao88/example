@@ -10,9 +10,7 @@ metadata:
   labels:
     workload.user.cattle.io/workloadselector: deployment-default-oracle-v2
   name: oracle-v2
-  namespace: default
   resourceVersion: "1359395"
-  selfLink: /apis/apps/v1beta2/namespaces/default/deployments/oracle-v2
   uid: 36d19587-9a49-11e8-9e7f-0050568d0e35
 spec:
   progressDeadlineSeconds: 600

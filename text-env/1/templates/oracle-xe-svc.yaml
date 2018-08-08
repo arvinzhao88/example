@@ -8,7 +8,6 @@ metadata:
     workload.cattle.io/workloadPortBased: "true"
   creationTimestamp: 2018-08-07T13:53:07Z
   name: oracle-v2-nodeport
-  namespace: default
   ownerReferences:
   - apiVersion: apps/v1beta2
     controller: true
@@ -16,7 +15,6 @@ metadata:
     name: oracle-v2
     uid: 36d19587-9a49-11e8-9e7f-0050568d0e35
   resourceVersion: "1358887"
-  selfLink: /api/v1/namespaces/default/services/oracle-v2-nodeport
   uid: 36d5a6ef-9a49-11e8-9e7f-0050568d0e35
 spec:
   clusterIP: 10.43.137.69
