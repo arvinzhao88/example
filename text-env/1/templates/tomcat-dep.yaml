@@ -15,6 +15,6 @@ spec:
         image: tomcat
         ports:
        - containerPort: 8080
-      env:
+      	env:
         - name: DATABASE
           value: oracle-xe
