@@ -19,4 +19,3 @@ spec:
         ports:
         - name: oracle-xe
           containerPort: 1521
-~
